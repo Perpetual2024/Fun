@@ -1,0 +1,49 @@
+
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* Maps custom colors/fonts to Tailwind utilities: bg-ink, text-gold, font-display, etc. */
+@theme {
+  --color-ink: #14192e;
+  --color-ink-soft: #1c2340;
+  --color-paper: #faf8f3;
+  --color-paper-dim: #f1ede3;
+  --color-gold: #e8b44a;
+  --color-gold-soft: #f3d488;
+  --color-pen: #c4553e;
+  --color-slate: #2b2e3b;
+  --color-slate-muted: #6b7080;
+  --color-rule: #9aa0b4;
+
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-slate);
+  background: var(--color-paper);
+}
+
+/* Ledger rule — a hairline row divider standing in for generic borders */
+.ledger-rule {
+  border-bottom: 1px solid var(--color-rule);
+  opacity: 0.5;
+}
+
+.ledger-rule-on-ink {
+  border-bottom: 1px solid rgba(154, 160, 180, 0.35);
+}
+
+/* The marking-pen tick — signature accent, used once per view, never decoratively repeated */
+.pen-tick {
+  color: var(--color-pen);
+}
+
+/* Data figures (scores, percentages) always render in mono to read as "measured" not "styled" */
+.data-figure {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
