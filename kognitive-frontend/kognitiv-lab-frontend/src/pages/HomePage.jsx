@@ -9,7 +9,7 @@ export default function HomePage() {
       <header className="border-b border-rule/30">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <span className="font-display text-xl tracking-tight">
-            Kognitiv<span className="pen-tick">.</span>Lab
+            Kognitiv<span className="pen-tick">.</span>Analytica
           </span>
           <nav className="hidden md:flex items-center gap-8 text-sm text-slate-muted">
             <a href="#how-it-works" className="hover:text-slate transition-colors">
@@ -81,7 +81,7 @@ export default function HomePage() {
               {
                 n: '02',
                 title: 'AI reads the pattern',
-                body: 'Kognitiv Lab compares each mark against the learner\u2019s own history, not just a class average, and drafts a note.',
+                body: 'Kognitiv Lab compares each mark against the learner\u2019s own history, not just a class average, and drafts a personalized note.',
               },
               {
                 n: '03',
@@ -148,7 +148,7 @@ export default function HomePage() {
             <h2 className="font-display text-3xl mb-4">See the grade. Understand the child.</h2>
             <p className="text-slate-muted leading-relaxed mb-6">
               Log in with your child's student credentials to see every subject,
-              every term, and a plain-language note on what to do next — not just a
+              every term, and a plain-language note personalized  on what to do next — not just a
               percentage.
             </p>
             <Link

@@ -60,7 +60,7 @@ export default function LedgerInsightCard({ compact = false }) {
         <p className="text-xs uppercase tracking-wide text-gold-soft mb-1.5">AI feedback</p>
         <p className="text-sm leading-snug">
           Strong grasp of algebra this term — English composition dipped slightly.
-          Suggest 15 minutes of guided reading, three times a week.
+          Suggest 15 minutes of guided reading, three times a week. Books recommended: <em>Advanced English</em>.
         </p>
       </div>
     </div>
