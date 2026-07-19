@@ -1,14 +1,5 @@
 import React from 'react';
 
-/**
- * The signature visual for Kognitiv Lab: a mark-sheet row that resolves into
- * an AI-written note, with a single marking-pen tick as the accent moment.
- * Used on the homepage hero and echoed (smaller) on the login brand panel.
- *
- * Props:
- *   compact (boolean, optional) - renders a smaller version for the login panel
- */
-
 const rows = [
   { subject: 'Mathematics', score: 78 },
   { subject: 'English', score: 64 },
@@ -41,7 +32,6 @@ export default function LedgerInsightCard({ compact = false }) {
         ))}
       </div>
 
-      {/* The resolving moment: mark sheet -> AI note, tick as the one bold accent */}
       <div className="mt-5 rounded-xl bg-ink text-paper p-4 relative">
         <svg
           className="absolute -top-3 -left-2 w-7 h-7 pen-tick"
@@ -60,7 +50,7 @@ export default function LedgerInsightCard({ compact = false }) {
         <p className="text-xs uppercase tracking-wide text-gold-soft mb-1.5">AI feedback</p>
         <p className="text-sm leading-snug">
           Strong grasp of algebra this term — English composition dipped slightly.
-          Suggest 15 minutes of guided reading, three times a week. Books recommended: <em>Advanced English</em>.
+          Suggest 15 minutes of guided reading, three times a week. Books recommended: <em>Advanced English - comprehensive passages</em>.
         </p>
       </div>
     </div>

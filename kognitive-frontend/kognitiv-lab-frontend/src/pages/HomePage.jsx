@@ -9,7 +9,7 @@ export default function HomePage() {
       <header className="border-b border-rule/30">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <span className="font-display text-xl tracking-tight">
-            Kognitiv<span className="pen-tick">.</span>Analytica
+            Kognitiv<span className="pen-tick">.</span>Analitica
           </span>
           <nav className="hidden md:flex items-center gap-8 text-sm text-slate-muted">
             <a href="#how-it-works" className="hover:text-slate transition-colors">
@@ -43,7 +43,7 @@ export default function HomePage() {
             read out loud.
           </h1>
           <p className="text-lg text-slate-muted mb-8 max-w-md">
-            Kognitiv Lab turns raw marks into feedback a parent can actually act on —
+            Kognitiv Analitica turns raw marks into feedback a parent can actually act on —
             and gives teachers the AI groundwork to write it, term after term.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -81,7 +81,7 @@ export default function HomePage() {
               {
                 n: '02',
                 title: 'AI reads the pattern',
-                body: 'Kognitiv Lab compares each mark against the learner\u2019s own history, not just a class average, and drafts a personalized note.',
+                body: 'Kognitiv Analitica compares each mark against the learner\u2019s own history, not just a class average, and drafts a note.',
               },
               {
                 n: '03',
@@ -107,7 +107,7 @@ export default function HomePage() {
           </p>
           <h2 className="font-display text-3xl mb-4">Less writing. More marking.</h2>
           <p className="text-slate-muted leading-relaxed mb-6">
-            Stop drafting the same feedback sentence forty times a term. Kognitiv Lab
+            Stop drafting the same feedback sentence forty times a term. Kognitiv Analitica
             drafts a first pass from the marks you already entered — you edit, approve,
             and send.
           </p>
@@ -148,7 +148,7 @@ export default function HomePage() {
             <h2 className="font-display text-3xl mb-4">See the grade. Understand the child.</h2>
             <p className="text-slate-muted leading-relaxed mb-6">
               Log in with your child's student credentials to see every subject,
-              every term, and a plain-language note personalized  on what to do next — not just a
+              every term, and a plain-language note on what to do next — not just a
               percentage.
             </p>
             <Link
@@ -164,8 +164,16 @@ export default function HomePage() {
       {/* Footer CTA */}
       <footer className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-6">
         <span className="font-display text-lg">
-          Kognitiv<span className="pen-tick">.</span>Lab
+          Kognitiv<span className="pen-tick">.</span>Analitica
         </span>
+        <div className="flex items-center gap-6 text-sm text-slate-muted">
+          <Link to="/terms" className="hover:text-slate transition-colors">
+            Terms
+          </Link>
+          <Link to="/privacy" className="hover:text-slate transition-colors">
+            Privacy
+          </Link>
+        </div>
         <Link
           to="/login"
           className="px-6 py-3 rounded-full border border-slate/20 font-medium hover:border-slate/40 transition-colors"

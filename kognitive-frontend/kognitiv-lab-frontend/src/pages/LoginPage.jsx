@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LedgerInsightCard from '../components/LedgerInsightCard';
 
 export default function LoginPage() {
+  const navigate = useNavigate();
   const [role, setRole] = useState('teacher'); // 'teacher' | 'parent'
   const [teacherForm, setTeacherForm] = useState({ email: '', password: '' });
   const [parentForm, setParentForm] = useState({ admissionNumber: '', parentPin: '' });
@@ -36,9 +37,15 @@ export default function LoginPage() {
       }
 
       const data = await res.json();
-      // TODO: store auth token / redirect to the correct dashboard, e.g.:
-      // navigate(role === 'teacher' ? '/teacher/dashboard' : '/parent/dashboard');
-      console.log('Logged in:', data);
+
+      // Stash the token so route guards / API calls can read it later.
+      // localStorage is fine for now — swap for httpOnly cookies once
+      // this goes beyond a school project, since localStorage tokens
+      // are readable by any script on the page.
+      localStorage.setItem('kognitiv_auth_token', data.token);
+      localStorage.setItem('kognitiv_role', role);
+
+      navigate(role === 'teacher' ? '/teacher' : '/parent');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Try again.');
     } finally {
@@ -126,7 +133,7 @@ export default function LoginPage() {
                     value={teacherForm.password}
                     onChange={(e) => setTeacherForm({ ...teacherForm, password: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-lg border border-rule/40 focus:outline-none focus:ring-2 focus:ring-gold bg-paper"
-                    placeholder="\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
+                    placeholder="Password ******"
                   />
                 </div>
               </>
@@ -191,6 +198,15 @@ export default function LoginPage() {
               <>Lost your PIN? Ask the school office to resend it.</>
             )}
           </p>
+
+          
+          <button
+            type="button"
+            onClick={() => navigate(role === 'teacher' ? '/teacher' : '/parent')}
+            className="w-full mt-4 py-2 rounded-lg border border-dashed border-pen text-pen text-xs font-medium hover:bg-pen/5 transition-colors"
+          >
+            Skip login (dev only) → {role === 'teacher' ? 'Teacher' : 'Parent'} dashboard
+          </button>
         </div>
       </div>
     </div>
